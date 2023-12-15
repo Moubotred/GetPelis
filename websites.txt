@@ -1,0 +1,150 @@
+https://www16.pelisplushd.to/pelicula/hijos-de-perra
+
+https://pelispop.lat/pelicula/como-perros-y-gatos/
+
+/html/body/div[1]/div/div/section/div/div[1]/div[2]/div/div[1]/div/div[2]
+
+\\div[id="video"]
+
+
+https://filemoon.sx/e/nmpxp92a1fvy
+
+
+
+#element = search.find_element(By.XPATH,"//ul/li[@class='open_submenu latino-select ']")
+#element.click()	
+
+#time.sleep(5)
+#root = html.fromstring(search.page_source)
+#open_submenu latino-select actives interfaz grafica
+#iframe = root.xpath("//ul/li[@class='open_submenu latino-select ']/div[2]/ul/li/@data-video")
+#print(iframe)
+
+# https://foro.elhacker.net/hacking_wireless/iquestalgun_diccionario_para_redes_mifibra_o_movistar-t488296.0.html
+# http://3wifi.stascorp.com/find
+# https://forum.antichat.club/threads/427654/page-104#post-4144869
+# https://4pda.to/forum/dl/post/6375487/WPS+pin+code.txt
+# diccionarios
+# https://forum.antichat.club/threads/281655/
+#opciones
+# "//ul/li[@cl	ass='open_submenu latino-select ']"
+
+# 
+# //ul[@class='TbVideoNv nav nav-tabs']/li/a[text()='{x}']"
+
+
+#root = html.fromstring(search.page_source)
+#iframe = root.xpath("")
+#print(iframe)
+
+#barra_busqueda = loading.until(EC.presence_of_element_located(CONFIG.SEARCH_BAR))
+
+#element = search.find_element(By.XPATH,"//ul[@class='TbVideoNv nav nav-tabs']/li/a[text()='filemoon']")
+#element.click()
+
+#servidores = ['PLUSTO VIP','filemoon','voesx','streamwish','doodstream','streamtape','netu','filelions']
+
+#while True:
+#	for x in servidores:
+#
+#		element = search.find_element(By.XPATH,f"//ul[@class='TbVideoNv nav nav-tabs']/li/a[text()='{x}']")
+#		element.click()
+#
+#		time.sleep(8)
+#		root = html.fromstring(search.page_source)
+#		iframe = root.xpath("//div[@class='video']/div/iframe/@src")[0]
+#		print(iframe)
+
+#time.sleep(5)
+#servidores = ['PLUSTO VIP','filemoon','voesx','streamwish','doodstream','streamtape','netu','filelions']
+
+#while True:
+#	for x in servidores:
+#		time.sleep(8)
+#		element = search.find_element(By.XPATH,f"//ul[@class='TbVideoNv nav nav-tabs']/li/a[text()='{x}']")
+#		element.click()
+		#time.sleep(5)
+		#enlaces = search.find_element(By.XPATH,'//div[@class="video"]/div/iframe/@src')
+
+
+
+
+root = html.fromstring(search.page_source)
+iframe = root.xpath('//iframe/@src')[0]
+print(iframe)
+
+search.get(iframe)
+element = search.find_element(By.XPATH,"//li[contains(., 'streamwish')]")
+element.click()
+
+#element.click()
+
+#'//div[@class="play isnd"]'
+#'//div[@class="pframe"]/iframe'
+#'//iframe/@src'
+
+#https://stackoverflow.com/questions/23426350/how-to-click-onclick-javascript-form-using-selenium
+
+#root = html.fromstring(search.page_source)
+#iframe = root.xpath('//div[@id="link_url"]/span/@url')
+#print(iframe)
+
+# lista de servidores
+# --- pelisplushd.to ----
+# https://www16.pelisplushd.to/serie/loki/temporada/1/capitulo/1
+# "//div[@class='video']/div/iframe/@src" 
+# se uso xpath de lxml
+
+# lista de servidores
+# -----cuevana3.ch--------
+# https://www12.cuevana3.ch/episodio/the-flash-1x1
+# "//ul/li[@class='open_submenu latino-select ']/div[2]/ul/li/@data-video"
+# se uso xpath de lxml 
+
+# lista de servidores
+# -----cuevana3.nu--------
+# https://cuevana3.nu/ver-el-episodio/episodio-6-de-loki-temporada-1/
+#
+# con interfaz:
+# 				'//ul[@class="sub-tab-lang _3eEG3_0 optm3 latinox"]/li/@data-server'
+# sin interfaz:
+# 				'//div[@id="link_url"]/span/@url'
+# se uso xpath de lxml 
+
+
+# lista de servidores
+# -----PELISPOP.LAT--------
+#
+# recolecta el iframe con lxml con xpath
+# recive el papametro de iframe y recarga la pagina
+# con otro sub menu de opciones de li luego aplica
+# By.ID y hace click para ver una de las opciones
+# de los servidores 
+
+#root = html.fromstring(search.page_source)
+#iframe = root.xpath('//iframe/@src')[0]
+#print(iframe)
+
+#search.get(iframe)
+#element = search.find_element(By.XPATH,"//li[contains(., 'streamwish')]")
+#element.click()
+
+# todos los video se transmiten m3u8
+# si se quiere ver mas rapido crear una funcion que permita buscar el m3u8
+# https://chat.openai.com/c/27aa8d11-bcd1-46d7-9179-5c0bf65dd4cc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
