@@ -1,0 +1,11 @@
+httpx
+pycryptodome
+lxml
+colorama 
+requests
+selenium-wire
+bs4
+qasync
+python-vlc
+PyQt5-sip==12.11.0
+PyQt5==5.15.4
