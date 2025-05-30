@@ -161,6 +161,7 @@ def discover_devices(timeout=2):
         while True:
             data, _ = sock.recvfrom(1024)
             for line in data.decode().split('\r\n'):
+                # logger.info('[*] data line: {}'.format(line))
                 if line.lower().startswith('location:'):
                     locations.add(line.split(':', 1)[1].strip())
     except socket.timeout:
@@ -362,30 +363,30 @@ def get_local_ip():
         s.close()
 
 
-if __name__ == "__main__":
-    logger.info(f"Sirviendo http://0.0.0.0:{PORT}/live.mp4 desde {M3U8_URL}")
+# if __name__ == "__main__":
+    # logger.info(f"Sirviendo http://0.0.0.0:{PORT}/live.mp4 desde {M3U8_URL}")
     
-    server = ThreadedHTTPServer(("", PORT), StreamHandler)
-    server_thread = threading.Thread(target=server.serve_forever)
-    server_thread.daemon = True
-    server_thread.start()
+    # server = ThreadedHTTPServer(("", PORT), StreamHandler)
+    # server_thread = threading.Thread(target=server.serve_forever)
+    # server_thread.daemon = True
+    # server_thread.start()
 
     # Descubrir el dispositivo y enviar video
-    iot = discover_devices()
+    # iot = discover_devices()
 
-    print(iot)
+    # print(iot)
     
     # if iot:
 
-        # LOCAL_IP = get_local_ip()
+    #     LOCAL_IP = get_local_ip()
 
-        # server_dlna = iot[0][1]
+    #     server_dlna = iot[0][1]
 
-        # time_duraction = obtener_duracion_total(M3U8_URL)
+    #     time_duraction = obtener_duracion_total(M3U8_URL)
 
-        # send_media(server_dlna, 'http://{}:{}/live.mp4'.format(LOCAL_IP,PORT), stop_after=time_duraction)
+    #     send_media(server_dlna, 'http://{}:{}/live.mp4'.format(LOCAL_IP,PORT), stop_after=time_duraction)
         
-        # uri = iot[0][1]
+    #     uri = iot[0][1]
         # send_media(disp,'http://192.168.1.109:7000/ror.mp4',stop_after=30)
 
     # else:
