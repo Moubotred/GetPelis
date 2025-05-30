@@ -20,3 +20,4 @@ libs
 pyvenv.cfg
 task.txt
 req.txt
+geckodriver.log
