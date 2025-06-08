@@ -84,7 +84,7 @@ class StreamHandler(BaseHTTPRequestHandler):
 
         cmd = [
             "ffmpeg",
-            "-threads", "1",  # Limita uso de CPU
+            "-threads", "3",  # Limita uso de CPU
             "-i", m3u8,
             "-c:v", "libx264",  # Requiere recodificación (más CPU)
             "-preset", "ultrafast",  # Reduce carga de CPU

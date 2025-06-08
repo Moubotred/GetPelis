@@ -106,10 +106,10 @@ class DlnaWorker(QObject):
     #     self.http_thread.start()
     #     logger.info(f"HTTP proxy iniciado en puerto {self.proxy_port}")
 
-    # def stop(self):
-    #     """
-    #     Detiene el servidor HTTP si está activo.
-    #     """
+    def stop(self):
+        """
+        Detiene el servidor HTTP si está activo.
+        """
     #     if self.http_server:
     #         self.http_server.shutdown()
     #         self.http_server.server_close()
@@ -135,3 +135,4 @@ class DlnaWorker(QObject):
         except requests.RequestException as e:
             logger.error("Error al enviar la URL al servidor proxy remoto", exc_info=e)
             raise
+    

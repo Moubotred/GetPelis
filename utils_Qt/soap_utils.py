@@ -42,7 +42,7 @@ def send_soap(control_url, action, body):
     xml = SOAP_ENVELOPE.format(body=body)
     try:
 
-        resp = requests.post(control_url, data=xml, headers=headers, timeout=20)
+        resp = requests.post(control_url, data=xml, headers=headers, timeout=50)
         resp.raise_for_status()
         return resp.text
     

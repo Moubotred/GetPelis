@@ -3,11 +3,11 @@ import logging
 logger = logging.basicConfig(
     level=logging.INFO,
     format='[%(asctime)s] %(levelname)s - %(name)s - %(message)s',
-    # datefmt='%Y-%m-%d %H:%M:%S',
-    # handlers=[
-        # logging.RotatingFileHandler('app.log', maxBytes=5*1024*1024, backupCount=3),  # 5MB por archivo, 3 archivos de backup
-    #     logging.StreamHandler()
-    # ]
+    datefmt='%Y-%m-%d %H:%M:%S',
+    handlers=[
+        # logging.RotatingFileHandler('app.log'),  # 5MB por archivo, 3 archivos de backup
+        logging.StreamHandler()
+    ]
 )
 
 # logging.getLogger("httpx").setLevel(logging.INFO)  # Reduce el nivel de logging de httpx
@@ -19,7 +19,7 @@ logging.getLogger("seleniumwire.storage").disabled = True
 logging.getLogger("seleniumwire.backend").disabled = True
 
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 
 
