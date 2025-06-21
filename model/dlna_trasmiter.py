@@ -12,6 +12,9 @@ from utils_Qt.log import logger
 
 import requests
 
+import logging
+logger = logging.getLogger(__name__)
+
 class DlnaWorker(QObject):
     finished = pyqtSignal(dict)
     error = pyqtSignal(str)
@@ -129,7 +132,7 @@ class DlnaWorker(QObject):
         proxy_base_url = f"http://{get_local_ip()}:{self.proxy_port}"  # o usa directamente '192.168.1.109'
         endpoint = f"{proxy_base_url}/set_url"
         try:
-            response = requests.post(endpoint, data=self.stream_url, timeout=3)
+            response = requests.post(endpoint, data=self.stream_url, timeout=20)
             response.raise_for_status()
             logger.info(f"URL enviada correctamente al servidor remoto: {self.stream_url}")
         except requests.RequestException as e:
