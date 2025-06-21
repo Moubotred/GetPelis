@@ -16,13 +16,6 @@ logger = logging.getLogger(__name__)
 
 PORT = 18000
 
-# # Logging
-# logging.basicConfig(
-#     level=logging.INFO,
-#     format='[%(asctime)s] %(levelname)s - %(message)s',
-# )
-# logger = logging.getLogger("proxy_stream")
-
 # Estado global protegido por un lock
 CURRENT_M3U8_URL = None
 CURRENT_M3U8_LOCK = threading.Lock()
