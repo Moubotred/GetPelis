@@ -8,15 +8,20 @@ import socket
 import subprocess
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import socketserver
+from utils_Qt.log import logger
+
+import logging
+logger = logging.getLogger(__name__)
+
 
 PORT = 18000
 
-# Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='[%(asctime)s] %(levelname)s - %(message)s',
-)
-logger = logging.getLogger("proxy_stream")
+# # Logging
+# logging.basicConfig(
+#     level=logging.INFO,
+#     format='[%(asctime)s] %(levelname)s - %(message)s',
+# )
+# logger = logging.getLogger("proxy_stream")
 
 # Estado global protegido por un lock
 CURRENT_M3U8_URL = None
@@ -84,7 +89,7 @@ class StreamHandler(BaseHTTPRequestHandler):
 
         cmd = [
             "ffmpeg",
-            "-threads", "3",  # Limita uso de CPU
+            # "-threads", "3",  # Limita uso de CPU
             "-i", m3u8,
             "-c:v", "libx264",  # Requiere recodificación (más CPU)
             "-preset", "ultrafast",  # Reduce carga de CPU
