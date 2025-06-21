@@ -1,3 +1,4 @@
+from logging.handlers import RotatingFileHandler
 import logging
     
 logger = logging.basicConfig(
@@ -5,12 +6,16 @@ logger = logging.basicConfig(
     format='[%(asctime)s] %(levelname)s - %(name)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S',
     handlers=[
-        # logging.RotatingFileHandler('app.log'),  # 5MB por archivo, 3 archivos de backup
-        logging.StreamHandler()
+        logging.StreamHandler(),
+        RotatingFileHandler(
+            'proxi_wire.log',
+            maxBytes=5*1024*1024,  # 5 MB
+            backupCount=3
+        )
     ]
 )
 
-# logging.getLogger("httpx").setLevel(logging.INFO)  # Reduce el nivel de logging de httpx
+
 
 logging.getLogger("httpx").disabled = True
 logging.getLogger("seleniumwire.handler").disabled = True
@@ -18,10 +23,9 @@ logging.getLogger("seleniumwire.server").disabled = True
 logging.getLogger("seleniumwire.storage").disabled = True
 logging.getLogger("seleniumwire.backend").disabled = True
 
+# logging.getLogger("httpx").setLevel(logging.INFO)  # Reduce el nivel de logging de httpx
 
 # logger = logging.getLogger(__name__)
-
-
 
 # # Configurar niveles específicos para librerías externas
 # logging.getLogger("httpx").setLevel(logging.INFO)  # Reduce el nivel de logging de httpx
