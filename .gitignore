@@ -22,3 +22,16 @@ task.txt
 req.txt
 *.txt
 *.log
+*.qrc
+*.png
+*.jpg
+*.ui
+run.py
+res.py
+icons/
+
+imagenes/
+animaciones/
+login_ui.py
+res_rc.py
+struct
